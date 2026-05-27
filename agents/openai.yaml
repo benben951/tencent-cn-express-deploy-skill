@@ -1,0 +1,4 @@
+interface:
+  display_name: "Tencent CN Express Deploy"
+  short_description: "Deploy Express apps to Tencent Cloud for mainland China access"
+  default_prompt: "Use $tencent-cn-express-deploy to prepare and deploy this Express website to Tencent Cloud for reliable mainland China access."
