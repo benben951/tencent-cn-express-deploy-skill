@@ -1,0 +1,35 @@
+app: your-app-name
+stage: prod
+
+component: http
+name: your-instance-name
+
+inputs:
+  region: ap-beijing
+  src:
+    src: ./
+    exclude:
+      - .env
+      - .env.*
+      - .git/**
+      - .vercel/**
+      - node_modules/**
+  faas:
+    framework: express
+    runtime: Nodejs16.13
+    name: your-function-name
+    memorySize: 1024
+    timeout: 20
+    initTimeout: 10
+    publicAccess: true
+    environments:
+      - key: ACCESS_CODE
+        value: ""
+      - key: SESSION_SECRET
+        value: replace-me
+      - key: DEEPSEEK_API_KEY
+        value: replace-me
+      - key: DEEPSEEK_BASE_URL
+        value: https://api.deepseek.com
+      - key: DEEPSEEK_MODEL
+        value: deepseek-v4-flash
